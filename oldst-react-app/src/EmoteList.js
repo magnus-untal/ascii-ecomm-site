@@ -6,9 +6,9 @@ const EmoteList=({data})=>{
       {
         data && data.map((d)=>{
             return(
-                <div className="card" key={d.id} style={{fontSize:d.size}}>
+                <div className="card" key={d.id}>
                 <div className="container">
-                    <h4><b>{d.face}</b></h4> 
+                    <h4 className="emote" style={{fontSize:d.size}}><b>{d.face}</b></h4> 
                     <p>{d.price}</p> 
                     <p>{d.date}</p>
                 </div>
