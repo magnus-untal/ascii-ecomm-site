@@ -1,29 +1,33 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import EmoteList from './EmoteList';
-import axios from 'axios';
+import relativeTime from './relativeTime'
 
 function App() {
-  const [emote, setEmote] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [sort, setSort] = useState('')
+  const [pageNumber, setPageNumber] = useState(1)
+  function handleSort(e){
+    setSort(e.target.value)
+    setPageNumber(1)
+  }
 
-  useEffect(() =>{
-    setLoading(true)
-    axios.get('http://localhost:8000/products?_page=10&_limit=15').then(res=>{
-      setLoading(false)
-      console.log('Response from API: ', res)
-      setEmote(res.data)
-    }).catch(err =>{
-      console.log(err)
-    })
-  },[])
-  
-  if(loading) return "Loading..."
+  const {
+    emotes,
+    hasMore,
+    loading
+  } = EmoteList()
 
   return (
     <div className='App'>
       <header>
           <h1>Products Grid</h1>
-          <EmoteList data={emote}/>
+          {emotes.map(emote => {
+            return <div className="card" key ={emote.id}>
+              <div className="container"></div>
+              <h5 className="emote" style={{fontSize:emote.size}}>{emote.face}</h5> 
+              <p className="emote__price">${(emote.price/100).toFixed(2)}</p> 
+              <p className="emote__time">{relativeTime(emote.date)}</p> 
+            </div>
+          })}
           <p>But first, a word from our sponsors:</p>
           <img
             className='ad'
