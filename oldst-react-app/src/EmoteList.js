@@ -1,4 +1,5 @@
 import React from 'react'
+import relativeTime from './relativeTime'
 
 const EmoteList=({data})=>{
   return(
@@ -9,8 +10,8 @@ const EmoteList=({data})=>{
                 <div className="card" key={d.id}>
                 <div className="container">
                     <h4 className="emote" style={{fontSize:d.size}}><b>{d.face}</b></h4> 
-                    <p>{d.price}</p> 
-                    <p>{d.date}</p>
+                    <p>${d.price/100}</p> 
+                    <p>{relativeTime(d.date)}</p>
                 </div>
                 </div>
             )
