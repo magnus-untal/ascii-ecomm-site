@@ -1,11 +1,23 @@
 import React from 'react'
 
-export default function EmoteList({ emote }){
-  return (
-    <div>
-        {emote.map(e =>(
-          <div key={e.id}>{e}</div>
-        ))}
-    </div>
+const EmoteList=({data})=>{
+  return(
+    <>
+      {
+        data && data.map((d)=>{
+            return(
+                <div className="card" key={d.id} style={{fontSize:d.size}}>
+                <div className="container">
+                    <h4><b>{d.face}</b></h4> 
+                    <p>{d.price}</p> 
+                    <p>{d.date}</p>
+                </div>
+                </div>
+            )
+        })
+      }
+    </>
   )
 }
+
+export default EmoteList

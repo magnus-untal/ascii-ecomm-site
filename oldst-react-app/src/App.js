@@ -8,10 +8,10 @@ function App() {
 
   useEffect(() =>{
     setLoading(true)
-    axios.get('http://localhost:8000/products').then(res=>{
+    axios.get('http://localhost:8000/products?_page=10&_limit=15').then(res=>{
       setLoading(false)
       console.log('Response from API: ', res)
-      setEmote(res.data.map(e => e.face))
+      setEmote(res.data)
     }).catch(err =>{
       console.log(err)
     })
@@ -23,7 +23,7 @@ function App() {
     <div className='App'>
       <header>
           <h1>Products Grid</h1>
-          <EmoteList emote={emote}/>
+          <EmoteList data={emote}/>
           <p>But first, a word from our sponsors:</p>
           <img
             className='ad'
