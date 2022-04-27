@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #5D737E;
 }
 
 code {
@@ -13,8 +14,26 @@ code {
 }
 
 h1{
-  display: flex;
   justify-content: center;
+}
+
+.navigation{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageName{
+  min-width: 70vw;
+}
+
+.dropdown{
+  max-height: 30px;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+  outline: solid;
+  outline-width: 1px;
+  outline-color: #02111B;
 }
 
 .productGrid{
@@ -26,6 +45,7 @@ h1{
 
 }
 
+
 .card{
   margin: auto;
   width: 300px;
@@ -33,6 +53,7 @@ h1{
   outline: solid;
   outline-color: #02111B;
   border-radius: 5px;
+  background-color: #FCFCFC;
 }
 
 .container{
@@ -47,7 +68,7 @@ h1{
   min-height: 50%;
   justify-content: center;
   align-items: center;
-  background-color: #FCFCFC;
+  
 }
 
 .emote__price{

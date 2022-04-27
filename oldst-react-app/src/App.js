@@ -5,7 +5,7 @@ import relativeTime from "./relativeTime";
 function App() {
   const [sort, setSort] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
-  const { emotes, hasMore, loading } = EmoteList(pageNumber);
+  const { emotes, hasMore, loading } = EmoteList(sort, pageNumber);
   const observer = useRef();
   const lastEmoteElementRef = useCallback(
     (node) => {
@@ -30,7 +30,14 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>¯\_(ASCII Products Grid)_/¯</h1>
+        <div className="navigation">
+          <h1 className="pageName">¯\_(ASCII Products Grid)_/¯</h1>
+          <select className="dropdown" onChange={handleSort}>
+            <option value="id">Product ID</option>
+            <option value="price">Price</option>
+            <option value="size">Size</option>
+          </select>
+        </div>
         <div className="productGrid">
           {emotes.map((emote, index) => {
             console.log(index);
@@ -38,7 +45,7 @@ function App() {
               if (emotes.length === index + 1) {
                 return (
                   <>
-                    <div className="ad">
+                    <div className="ad__container">
                       <p>But first, a word from our sponsors:</p>
                       <img
                         className="ad"
@@ -71,7 +78,7 @@ function App() {
               }
               return (
                 <>
-                  <div className="ad">
+                  <div className="ad__container">
                     <p>But first, a word from our sponsors:</p>
                     <img
                       className="ad"
@@ -126,7 +133,6 @@ function App() {
           })}
         </div>
       </header>
-      products goes here..
     </div>
   );
 }
