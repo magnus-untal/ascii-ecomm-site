@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+h1{
+  display: flex;
+  justify-content: center;
+}
 
 .productGrid{
   display: grid;
@@ -27,6 +31,7 @@ code {
   width: 300px;
   height: 300px;
   outline: solid;
+  outline-color: #02111B;
   border-radius: 5px;
 }
 
@@ -52,7 +57,7 @@ code {
   justify-content: center;
   border-radius: 5px;
   background-color: #02111B;
-  font-style: bold;
+  font-weight:bold;
   color: #FCFCFC;
 }
 
