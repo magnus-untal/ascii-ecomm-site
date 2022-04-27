@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function relativeTime(date) {
     const prevDate = new Date(date);
     const diff = Number(new Date()) - prevDate;
@@ -10,18 +8,18 @@ export default function relativeTime(date) {
     switch(true){
         case diff < min:
             const seconds = Math.round(diff/1000);
-            return `${seconds} ${seconds > 1 ? ' seconds': ' second'} ago`;
+            return `Posted ${seconds} ${seconds > 1 ? ' seconds': ' second'} ago`;
         case diff < hour:
             const minutes = Math.round(diff/min);
-            return `${minutes} ${minutes > 1 ? ' minutes':' minute'} ago`;
+            return `Posted ${minutes} ${minutes > 1 ? ' minutes':' minute'} ago`;
         case diff < day:
             const hours = Math.round(diff/hour);
-            return `${hours} ${hours > 1 ? ' hours': ' hour'} ago`
+            return `Posted ${hours} ${hours > 1 ? ' hours': ' hour'} ago`
         case diff < week:
             const days = Math.round(diff/day);
-            return `${days} ${days > 1 ? ' days': ' day'} ago`
+            return `Posted ${days} ${days > 1 ? ' days': ' day'} ago`
         default:
-            return date;
+            return `Posted on ${date}`;
     }
 }
 

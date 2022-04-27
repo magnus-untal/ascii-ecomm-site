@@ -12,3 +12,51 @@ code {
     monospace;
 }
 
+
+.productGrid{
+  display: grid;
+  column-gap: 30px;
+  row-gap: 20px;
+  justify-content: center;
+  grid-template-columns: 300px 300px 300px;
+
+}
+
+.card{
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  outline: solid;
+  border-radius: 5px;
+}
+
+.container{
+  min-width: fit-content;
+  height: 280px;
+  margin: 10px;
+}
+
+.emote{
+  display: flex;
+  margin: 10px;
+  min-height: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #FCFCFC;
+}
+
+.emote__price{
+  display: flex;
+  padding: 5px 0;
+  max-width: 60px;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #02111B;
+  font-style: bold;
+  color: #FCFCFC;
+}
+
+.emote__price:hover{
+  background-color: #5D737E;
+  cursor: pointer;
+}

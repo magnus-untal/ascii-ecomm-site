@@ -1,5 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react'
-import relativeTime from './relativeTime'
+import {useEffect, useState, useRef} from 'react'
 import axios from 'axios';
 
 
