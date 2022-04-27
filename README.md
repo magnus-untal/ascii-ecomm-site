@@ -16,11 +16,11 @@ Here is a quick overview of my project for my application to Old St. Labs:
   7. the product grid should automatically load more items as you scroll down.
   8. after every 20 products we need to insert an advertisement from one of our sponsors. Use the same markup as the advertisement in the header shown in `src/App.js`, but make sure the `?r` query param is randomly generated each time an ad is displayed. - I placed them in-grid I hope you don't mind but it helped me keep track of every 20th product
 
-In order to run the app, you need to have at least Node.js installed on your machine (to run the server and the project itself)
+In order to run the app, you need to have at least Node.js installed on your machine (to run the server and the project itself).
 Open powershell/cmd in the folder labeled oldst-react-app (alternatively you can open the folder in VSCode and run the terminal there)
-run the command `npm install` to install any missing dependencies
-run the server using `npm run server`
-run the app by using `npm start`
+1. run the command `npm install` to install any missing dependencies
+2. run the server using `npm run server`
+3. run the app by using `npm start`
 
 After following these steps, the app should run on the browser (hopefully the project runs because it works on my end and idk if theres a chance of it breaking)
 
